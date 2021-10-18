@@ -6,7 +6,7 @@ Left-to-right, top-to-bottom:
 
 **Clock Source**
 
-Current clock source: "Master" for master mode. "Internal" if not master but no valid external synchronisation reference. "Word Clk", "AES", "S/PDIF", "ADAT", "TCO" or "Sync In" otherwise.
+Current clock source: "Master" for master mode. "Internal" if not master but no valid external synchronisation reference if available. "Word Clk" (word clock input), "AES" (AES-3 digital audio input), "S/PDIF" (S/PDIF digital audio input), "ADAT" (ADAT digital audio input), "TCO" (Time Code Option module) or "Sync In" (intra-computer synchronisation signal jumper on the sound card) otherwise.
 
 **Sample Rate**
 
@@ -14,15 +14,15 @@ Current effective sound card sample rate in samples per second. May differ sligh
 
 **Buffer Size**
 
-PCM data is handed from the sound card to the system or vice versa in buffers of this many samples. Together with the sample rate, the buffer size determines the latency between incoming and outgoing PCM data. At 48000Hz, a buffer size of 128 samples leads to 2.7 milliseconds capture latency. Playback latency is twice that on linux.  A smaller buffer size leads to lower latency and vice versa. But a small buffer size also increases audio card interrupt rate and, if too low, will cause X-Runs (buffer under- or overruns), leading to clicking noises. On modern systems, buffers sizes as small as 64 samples will generally work well. The minimum is 32 samples. The maximum is 4096 samples. Buffer size is set by linux ALSA during PCM initialisation. It cannot be set using hdspeconf.
+PCM data is handed from the sound card to the system or vice versa in buffers of this many samples. Together with the sample rate, the buffer size determines the latency between incoming and outgoing PCM data. At 48000Hz, a buffer size of 128 samples leads to 2.7 milliseconds capture latency. Playback latency is usually twice that.  A smaller buffer size leads to lower latency and, vice versa, a larger buffer size will cause higher latency. Small buffer sizes also increase audio card interrupt rate and, if too small given the processing speed of a computer system and its load, will cause X-Runs (buffer under- or overruns). X-Runs are perceived as disturbing clicking noises during playback and short gaps of silence in recordings. On modern systems, buffers sizes as small as 64 samples will generally work well. The minimum is 32 samples. The maximum is 4096 samples. Buffer size is set by linux ALSA during PCM initialisation. It cannot be set using hdspeconf.
 
 **FW version**
 
-Sound card firmware version.
+Sound card firmware version. Take note of firmware version when reporting issues with the hdspe driver or hdspeconf.
 
 **Preferred Clock Source / Input Status**
 
-The radio buttons enable to set the preferred clock source. Select "Internal" to use the sound card in clock master mode. If the selected preferred clock source is not available or valid, the sound card will use a next clock source. The actual clock source used is reported at any time in the **Clock Source** field.
+The radio buttons enable to set the preferred clock source. Select "Internal" to use the sound card in master clock mode. If the selected preferred clock source is not available or valid, the sound card will use a next clock source. The actual clock source used is reported at any time in the **Clock Source** field.
 
 For each potential clock source, sync status is indicated: 
 - "N/A" means the source hardware (Word Clock module, if a TCO card is present, and TCO otherwise) is not available. The card does not report whether or not an optional Word Clock Module is present or not. If neither TCO nor WCM are present, Word Clock status will show as "No Lock" and TCO as "N/A".
