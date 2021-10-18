@@ -75,7 +75,7 @@ Selects the S/PDIF input connector to use:
 
 **S/PDIF Out**
 
-- "Optical": output S/PDIF on the TOSLINK output connector (otherwise used for ADAT output). If not selected, S/PDIF output is generated on the red RCA connector on the digital audio breakout cable.
+- "Optical": output S/PDIF on the TOSLINK output connector (otherwise used for ADAT output). If not selected, S/PDIF output is produced on the red RCA connector of the digital audio breakout cable.
 - "Professional": selects professional format S/PDIF output. If not selected, consumer format S/PDIF output is produced.
 
 **Word Clk Out**
