@@ -42,7 +42,9 @@ This setting controls the conversion of world clock input from 44.1 KHz to 48 Kh
 
 - "Use TCO": selecting this checkbox sets the preferred clock source of the sound card to use the TCO. Unselecting this box, resets the sound card in master clock mode. 
 
-Next, the actual sound card sample rate is displayed, to 0.1 Hz accuracy, as well as the TCO module lock status. The sample rate is displayed in alarming orange color if non-standard, just like the effective sound card sample rate on the main sound card configuration dialog. If the TCO has no valid synchronisation signal, "No TCO lock" is displayed, again in alarming orange color.
+Next, the actual sound card sample rate is displayed, to 0.1 Hz accuracy, as well as the TCO module lock status. The sample rate is displayed in alarming orange color if non-standard, just like the effective sound card sample rate on the main sound card configuration dialog. 
+
+If the TCO has no valid synchronisation signal, "No TCO lock" is displayed, again in alarming orange color.
 
 TCO lock status is also reflected by the green LED on the TCO module bracket.
 
