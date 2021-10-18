@@ -47,6 +47,41 @@ HDSPeCard::DriverCheck::DriverCheck(SndCard* card)
 			     + "is not a HDSPe driven card.\n");
 }
 
+#ifdef NEVER
+static void DumpProps(HDSPeCard* card)
+{
+  std::vector<class SndControl*> controls = card->getControls();
+
+  std::cout << "| Interface | Name | Access | Value Type | Description |\n"
+	    << "| :- | :- | :- | :- | :- |\n";
+
+  for (auto c : controls) {    
+    const std::string name = c->getName();
+    snd_ctl_elem_iface_t iface = c->getInterface();
+
+    std::cout << "| " << std::string(snd_ctl_elem_iface_name(iface))
+	      << " | " << name
+	      << " | "
+	      << (c->isReadable() ? "R" : "")
+	      << (c->isWritable() ? "W" : "")
+	      << (c->isVolatile() ? "V" : "")
+	      << " | ";
+
+    switch (c->getType()) {
+    case SND_CTL_ELEM_TYPE_BOOLEAN: std::cout << "Bool"; break;
+    case SND_CTL_ELEM_TYPE_INTEGER: std::cout << "Int"; break;
+    case SND_CTL_ELEM_TYPE_INTEGER64: std::cout << "Int64"; break;
+    case SND_CTL_ELEM_TYPE_ENUMERATED: std::cout << "Enum"; break;
+    case SND_CTL_ELEM_TYPE_BYTES: std::cout << "Bytes"; break;
+    case SND_CTL_ELEM_TYPE_IEC958: std::cout << "IEC958"; break;
+    default: {}
+    }
+
+    std::cout << " |             | \n";
+  }
+}
+#endif /*NEVER*/
+
 HDSPeCard::HDSPeCard(int index)
   : SndCard      (index)
   , driverCheck  (this)
@@ -69,6 +104,10 @@ HDSPeCard::HDSPeCard(int index)
 {
   if (tcoPresent)
     tco = new HDSPeTCO(this);
+
+#ifdef NEVER  
+  DumpProps(this);
+#endif /*NEVER*/
 
   statusPolling.callOnValueChange([this](){ onStatusChange(); });
   statusPolling.set(statusPollFreq);
