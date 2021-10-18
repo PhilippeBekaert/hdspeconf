@@ -12,9 +12,13 @@ User space configuration tool for RME HDSPe MADI / AES / RayDAT / AIO and AIO Pr
       
 This will build the hdspeconf executable in your repository clone folder.
 
+**Installation**
+
+- Copy hdspeconf and dialog-warning.png to a folder of your choice, e.g. /usr/local/bin.
+
 **Usage**
 
-- cd to your repository clone folder and type
+- cd to your repository clone folder, or make sure hdspeconf is in a folder in your $PATH, and type
 
      hdspeconf
      
