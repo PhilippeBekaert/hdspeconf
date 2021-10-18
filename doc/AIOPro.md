@@ -76,11 +76,11 @@ Selects the S/PDIF input connector to use:
 **S/PDIF Out**
 
 - "Optical": output S/PDIF on the TOSLINK output connector (otherwise used for ADAT output). If not selected, S/PDIF output is generated on the red RCA connector on the digital audio breakout cable.
-- "Professional": select professional S/PDIF output. If not selected, "Consumer" S/PDIF output is generated.
+- "Professional": selects professional format S/PDIF output. If not selected, consumer format S/PDIF output is produced.
 
 **Word Clk Out**
 
-- "Single Speed": if selected, single-speed word clock output is generated even if the card is running at double or quadruple sample rates. If not selected, word clock output will follow the speed mode of the card.
+- "Single Speed": if selected, single-speed word clock output is generated even if the card is running at double or quadruple speed (64000 and above sample rates). If not selected, word clock output will follow the speed mode of the card.
 
 The TCO module only supports single speed word clock output. When the TCO module is present, this setting is always enabled and cannot be changed.
 
