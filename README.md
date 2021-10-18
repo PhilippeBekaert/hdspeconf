@@ -43,7 +43,7 @@ tell you as well.
 
 **License and (No) Warranty**
 
-See [LICENSE](https://github.com/PhilippeBekaert/snd-hdspe/blob/main/LICENSE).
+See [LICENSE](https://github.com/PhilippeBekaert/hdspeconf/blob/main/LICENSE).
 
 **Author**
 
