@@ -7,8 +7,8 @@ Left-to-right, top-to-bottom:
 **Clock Source**
 
 Current clock source of the audio card:
-- "Master" for master mode. 
-- "Internal" if not master but no valid external synchronisation reference if available. 
+- "Master": when running the card in master clock mode. 
+- "Internal": when not running the card in master clock mode, but no valid external synchronisation reference if available. 
 - "Word Clk": word clock input.
 - "AES": AES-3 digital audio input.
 - "S/PDIF": S/PDIF digital audio input.
