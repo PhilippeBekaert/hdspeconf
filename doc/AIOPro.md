@@ -6,7 +6,15 @@ Left-to-right, top-to-bottom:
 
 **Clock Source**
 
-Current clock source: "Master" for master mode. "Internal" if not master but no valid external synchronisation reference if available. "Word Clk" (word clock input), "AES" (AES-3 digital audio input), "S/PDIF" (S/PDIF digital audio input), "ADAT" (ADAT digital audio input), "TCO" (Time Code Option module) or "Sync In" (intra-computer synchronisation signal jumper on the sound card) otherwise.
+Current clock source of the audio card:
+- "Master" for master mode. 
+- "Internal" if not master but no valid external synchronisation reference if available. 
+- "Word Clk": word clock input.
+- "AES": AES-3 digital audio input.
+- "S/PDIF": S/PDIF digital audio input.
+- "ADAT": ADAT digital audio input.
+- "TCO": Time Code Option module.
+- "Sync In": intra-computer synchronisation signal jumper on the sound card) otherwise.
 
 **Sample Rate**
 
