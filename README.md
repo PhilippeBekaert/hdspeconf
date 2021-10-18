@@ -26,7 +26,8 @@ This will build the hdspeconf executable in your repository clone folder.
      
 on the command line, or make a desktop launcher for it and double click that. There are no command line arguments (yet, at this time).
 
-- If you have a supported RME HDSPe card on your system, and the [snd-hdspe](https://github.com/PhilippeBekaert/snd-hdspe) driver is running, a panel comes up with configuration options and settings for your card.
+- If you have a supported RME HDSPe card on your system, and the [snd-hdspe](https://github.com/PhilippeBekaert/snd-hdspe) driver is running, a panel comes up with configuration options and settings for your card. If either condition is not fulfilled, hdspeconf will
+tell you as well.
 
 **Status**
 
@@ -38,6 +39,11 @@ on the command line, or make a desktop launcher for it and double click that. Th
 
 - Thanks to [RME](http://www.rme-audio.com) for providing the necessary information and code for developing the driver.
 - Thanks to [Amptec Belgium](http://www.amptec.be) for hardware support.
+
+
+**License and (No) Warranty**
+
+See [LICENSE](https://github.com/PhilippeBekaert/snd-hdspe/blob/main/LICENSE).
 
 **Author**
 
