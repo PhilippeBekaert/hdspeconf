@@ -2,7 +2,7 @@
 
 ![AIO Pro control panel](AioProTCO.png "AIO Pro control panel")
 
-Left-to-right, top-to-bottom:
+Top-to-bottom, left-to-right:
 
 **Clock Source**
 
