@@ -28,6 +28,7 @@ on the command line, or make a desktop launcher for it and double click that. Th
 
 - RME HDSPe AIO Pro cards, TCO, Word Clock module and audio I/O extension boards are fully supported.
 - RME HDSPe AIO, MADI, AES and RayDAT configuration panels TODO.
+- Tested only on my Ubuntu Studio 20.04 development system so far.
 
 **Author**
 
