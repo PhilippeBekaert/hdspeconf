@@ -18,7 +18,7 @@ Current clock source of the audio card:
 
 **Sample Rate**
 
-Current effective sound card sample rate in audio frames per second. May differ slightly from standard rates (32000, 44100, 48000, 64000, 88200, 96000, 128000, 176400, 192000) for external clock source, or due to non-unit pitch setting. If non-standard, this fields changes color into warn-full orange.
+Current effective sound card sample rate in audio frames per second. May differ slightly from standard rates (32000, 44100, 48000, 64000, 88200, 96000, 128000, 176400, 192000) for external clock source, or due to non-zero pitch setting. If non-standard, this field changes color into warn-full orange.
 
 **Buffer Size**
 
