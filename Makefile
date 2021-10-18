@@ -12,11 +12,10 @@ hdspeconf: $(OBJECTS)
 	g++ -o hdspeconf ${OBJECTS} $(LDFLAGS)
 
 depend:
-	-ln ../hdspm/hdspe.h .
 	g++ $(CXXFLAGS) -MM $(SOURCES) > deps
 
 clean:
-	-rm *.o *~ deps hdspe.h
+	-rm *.o *~ deps
 	touch deps
 
 .cpp.o:
