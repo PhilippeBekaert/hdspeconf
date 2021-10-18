@@ -24,7 +24,7 @@ Sets the LTC engine frame rate: 24, 25, 29.97 or 30 LTC frames per second. This 
 
 **Drop Frame LTC**
 
-Select this box to output drop frame format LTC. 
+Select this box to output drop frame format LTC. When not selecting, non-drop frame time code is produced. Drop frame time code is time code in which frames 0 and 1 of the first second of every minute, except multiples of 10 minutes, are skipped. Drop frame time code was invented in order to keep LTC time codes more or less in sync with wall clock time at a LTC frame rate of 29.97 fps.
 
 **LTC Sample Rate**
 
