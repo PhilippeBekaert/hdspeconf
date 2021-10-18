@@ -3,7 +3,9 @@ User space configuration tool for RME HDSPe MADI / AES / RayDAT / AIO and AIO Pr
 
 **Building hdspeconf**
 
-- Prerequisites: hdspeconf builds upon ALSA lib and wxwidgets. On ubuntu, install libasound2-dev, wx3.0-headers and libwxgtk3.0-dev.
+- Prerequisites: hdspeconf builds upon ALSA lib and wxwidgets. On ubuntu, 
+
+     apt-get install libasound2-dev wx3.0-headers libwxgtk3.0-dev
 
 - Clone the hdspeconf repository to your local disk. cd to the clone folder. Type
 
@@ -31,6 +33,11 @@ on the command line, or make a desktop launcher for it and double click that. Th
 - RME HDSPe AIO Pro cards, TCO, Word Clock module and audio I/O extension boards are fully supported.
 - RME HDSPe AIO, MADI, AES and RayDAT configuration panels TODO.
 - Tested only on my Ubuntu Studio 20.04 development system so far.
+
+**Acknowledgements**
+
+- Thanks to [RME](http://www.rme-audio.com) for providing the necessary information and code for developing the driver.
+- Thanks to [Amptec Belgium](http://www.amptec.be) for hardware support.
 
 **Author**
 
