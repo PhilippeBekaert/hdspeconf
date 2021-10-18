@@ -7,6 +7,8 @@ User space configuration tool for RME HDSPe MADI / AES / RayDAT / AIO and AIO Pr
 
      apt-get install libasound2-dev wx3.0-headers libwxgtk3.0-dev
 
+The GUI panels were designed with [wxGlade](http://wxglade.sourceforge.net). You do not need wxGlade as long as you do not need or want to update the panel designs. If you do, make sure to use wxGlade version 1.0.0 or later. Older versions of wxGlade (such as the stock version on Ubuntu 20.04) will not work.
+
 - Clone the hdspeconf repository to your local disk. cd to the clone folder. Type
 
       make depend
