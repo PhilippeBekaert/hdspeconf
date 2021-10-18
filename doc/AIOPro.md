@@ -82,7 +82,7 @@ Selects the S/PDIF input connector to use:
 
 - "Single Speed": if selected, single-speed word clock output is generated even if the card is running at double or quadruple speed (64000 and above sample rates). If not selected, word clock output will follow the speed mode of the card.
 
-The TCO module only supports single speed word clock output. When the TCO module is present, this setting is always enabled and cannot be changed.
+The optional TCO module only supports single speed word clock output. When the TCO module is present, this setting is always enabled and cannot be changed.
 
 **TMS**
 
