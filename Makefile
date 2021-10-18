@@ -4,7 +4,7 @@ SOURCES=hdspeconf.cpp SndCard.cpp SndControl.cpp \
 	AioPanel.cpp
 OBJECTS=${SOURCES:.cpp=.o} 
 CXXFLAGS=-Wall -g -O2 -I.. `wx-config --cxxflags`
-LDFLAGS=-lasound `wx-config --libs` #  -Wl,-rpath=/usr/local/wxwidgets/lib
+LDFLAGS=-lasound `wx-config --libs`
 
 all: hdspeconf
 
