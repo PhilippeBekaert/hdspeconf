@@ -1,11 +1,13 @@
 # hdspeconf
-User space configuration tool for RME HDSPe MADI / AES / RayDAT / AIO and AIO Pro cards driven by the [snd-hdspe](https://github.com/PhilippeBekaert/snd-hdspe) driver.
+User space configuration tool for [RME](http://www.rme-audio.com/) HDSPe MADI / AES / RayDAT / AIO and AIO Pro cards, driven by the [snd-hdspe](https://github.com/PhilippeBekaert/snd-hdspe) driver.
 
 **Building hdspeconf**
 
 - Prerequisites: hdspeconf builds upon ALSA lib and wxwidgets. On ubuntu, 
 
      apt-get install libasound2-dev wx3.0-headers libwxgtk3.0-dev
+
+The GUI panels were designed with [wxGlade](http://wxglade.sourceforge.net). You do not need wxGlade as long as you do not need or want to update the panel designs. If you do, make sure to use wxGlade version 1.0.0 or later. Older versions of wxGlade (such as the stock version on Ubuntu 20.04) will not work.
 
 - Clone the hdspeconf repository to your local disk. cd to the clone folder. Type
 
@@ -33,7 +35,7 @@ tell you as well.
 
 - RME HDSPe AIO Pro cards, TCO, Word Clock module and audio I/O extension boards are fully supported.
 - RME HDSPe AIO, MADI, AES and RayDAT configuration panels TODO.
-- Tested only on my Ubuntu Studio 20.04 development system so far.
+- Developed and tested only on Ubuntu Studio 20.04 so far.
 
 **Acknowledgements**
 
