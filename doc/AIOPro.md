@@ -52,11 +52,11 @@ Pitch can be set when running in master mode: It changes sample rate and tune at
 
 **Input Level**
 
-Sets the analog input sound level (dBu units) corresponding to full scale digital level. In broadcasting, +4 dBU is a standard setting. The other settings allow for additional head-room while recording.
+Sets the analog input sound level (dBu units) corresponding to full scale digital level. In broadcasting, +4 dBu is a standard setting. The other settings allow for additional head-room while recording.
 
 **Output Level**
 
-Sets the analog output sound level (dBu units) corresponding to full scale digital level. In broadcasting, +4 dBU on XLR is a standard setting. Other settings allow to output higher or lower analog sound levels. The actual levels depend on the **Analog Out** setting.
+Sets the analog output sound level (dBu units) corresponding to full scale digital level. In broadcasting, +4 dBu on XLR is a standard setting. Other settings allow to output higher or lower analog sound levels. The actual levels depend on the **Analog Out** setting.
 
 **Analog Out**
 
