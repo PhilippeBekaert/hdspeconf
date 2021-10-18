@@ -60,5 +60,5 @@ Start/stop LTC output:
 - "Jam Sync": starts LTC output to match LTC input. 
 - "Run": unselecting this checkbox pauzes LTC output. LTC output is re-started from the pauzed time code when checked again.
 
-Note that LTC output will slowly drift away from the clock source it was started with, unless input and output are kept synchronised in some other way.
+Note that LTC output will slowly drift away from the clock source it was started with, unless input and output are kept synchronised in some way.
 
