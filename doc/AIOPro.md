@@ -60,7 +60,7 @@ Sets the analog output sound level (dBu units) corresponding to full scale digit
 
 **Analog Out**
 
-Switches output levels depending on whether outputting balanced audio, over XLR, or unbalanced output, over RCA. This setting shall be set according to what analog audio break-out cable (XLR or RCA) is mounted on the sound card.
+Switches output levels depending on whether outputting balanced audio, over XLR, or unbalanced output, over RCA. This setting shall match the analog audio break-out cable (XLR or RCA) mounted on the sound card.
 
 **Phones**
 
