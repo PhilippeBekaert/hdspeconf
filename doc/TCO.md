@@ -28,7 +28,7 @@ Select this box to output drop frame format LTC.
 
 **LTC Sample Rate**
 
-Sets the LTC engine sample rate: 44.1 or 48 KHz are supported. Selecting "From App" will adapt to the internal sample rate class of the sound card.  32 KHz is *not* supported, and will translate into a LTC engine sample rate of 44.1 KHz. This setting affects both the sound card synchronisation sample rate from LTC input as well as LTC output. For LTC output, this setting shall match the audio cards sample rate. The **Auto button** in the System Sample Rate box sets this setting to "From App", in order to match the internal sample rate set on the card.
+Sets the LTC engine sample rate: 44.1 or 48 KHz are supported. Selecting "From App" will adapt to the internal sample rate class of the sound card.  32 KHz is *not* supported, and will translate into a LTC engine sample rate of 44.1 KHz. This setting affects both the sound card synchronisation sample rate from LTC input as well as LTC output. For LTC output, this setting shall match the audio cards sample rate. The **Auto button** in the System Sample Rate box sets this setting to "From App", in order to match the internal sample rate of the sound card.
 
 **Pull Up/Down**
 
