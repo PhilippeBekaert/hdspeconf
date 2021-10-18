@@ -18,17 +18,18 @@ PCM data is handed from the sound card to the system or vice versa in buffers of
 
 **FW version**
 
-Sound card firmward version.
+Sound card firmware version.
 
 **Preferred Clock Source / Input Status**
 
-The radio buttons enable to set the preferred clock source. Select "Internal" to use the sound card in clock master mode. If the selected preferred clock source is not available or valid, the sound card will use a next clock source. The actual clock source is reported in the **Clock Source** field.
+The radio buttons enable to set the preferred clock source. Select "Internal" to use the sound card in clock master mode. If the selected preferred clock source is not available or valid, the sound card will use a next clock source. The actual clock source used is reported at any time in the **Clock Source** field.
 
-For each potential clock source, status is indicated: 
-- "N/A" means the source hardware (Word Clock module, if a TCO card is present, and TCO otherwise) is not available. The card does not report whether or not an optional Word Clock Module is present or not. If neither TCO or WCM are present, Word Clock status will show as "No Lock". 
+For each potential clock source, sync status is indicated: 
+- "N/A" means the source hardware (Word Clock module, if a TCO card is present, and TCO otherwise) is not available. The card does not report whether or not an optional Word Clock Module is present or not. If neither TCO nor WCM are present, Word Clock status will show as "No Lock" and TCO as "N/A".
 - "No Lock" mean no valid signal is detected on the source. 
-- "Lock" means the source hardware is available and a valid signal is detected on it, but it is not compatible with the current clock source.
-- "Sync" means the source hardware is available and a valid signal is detected on it, compatible with the current clock source.
+- "Lock" means a valid signal is detected on the source, but it is not compatible with the current clock source.
+- "Sync" means a valid signal is detected on the source, and the signals sample rate is compatible with the current clock source.
+
 While being live, it is safe to switch preferred clock source to a source with "Sync" status. Switching to other clock source may result in sudden sample rate changes and clicks and noises.
 
 The panel also indicates the detected sample rate on external sources with valid signal ("Lock" or "Sync" status), and warns about sources with sample rate not compatible with the current source by displaying a warning sign.
