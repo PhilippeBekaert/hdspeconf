@@ -24,7 +24,7 @@ Sets the LTC engine frame rate: 24, 25, 29.97 or 30 LTC frames per second. This 
 
 **Drop Frame LTC**
 
-Select this box to output drop frame format LTC. It has no effect on sound card synchronisation sample rate.
+Select this box to output drop frame format LTC. 
 
 **LTC Sample Rate**
 
