@@ -35,7 +35,7 @@ tell you as well.
 
 - RME HDSPe AIO Pro cards, TCO, Word Clock module and audio I/O extension boards are fully supported.
 - RME HDSPe AIO, MADI, AES and RayDAT configuration panels TODO.
-- Tested only on my Ubuntu Studio 20.04 development system so far.
+- Developed and tested only on Ubuntu Studio 20.04 so far.
 
 **Acknowledgements**
 
