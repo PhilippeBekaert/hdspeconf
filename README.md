@@ -1,5 +1,5 @@
 # hdspeconf
-User space configuration tool for RME HDSPe MADI / AES / RayDAT / AIO and AIO Pro cards driven by the [snd-hdspe](https://github.com/PhilippeBekaert/snd-hdspe) driver.
+User space configuration tool for [RME](http://www.rme-audio.com/) HDSPe MADI / AES / RayDAT / AIO and AIO Pro cards driven by the [snd-hdspe](https://github.com/PhilippeBekaert/snd-hdspe) driver.
 
 **Building hdspeconf**
 
