@@ -34,5 +34,50 @@ While being live, it is safe to switch preferred clock source to a source with "
 
 The panel also indicates the detected sample rate on external sources with valid signal ("Lock" or "Sync" status), and warns about sources with sample rate not compatible with the current source by displaying a warning sign.
 
-The internal sample rate is set by linux ALSA during PCM initialization. It cannot be set using hdspeconf is some audio application is running. hdspeconf only allows changing the sample rate if no application is running. The setting may be overridden by ALSA tools after, though.
+The internal sample rate is set by linux ALSA during PCM initialization. It cannot be set using hdspeconf is some audio application is using the card. hdspeconf only allows changing the sample rate if no application is running. The setting may be overridden by ALSA tools after, though.
+
+**Pitch**
+
+Displays the current source sample rate pitch relative to the nearest standard sample rate, in parts per million. 
+
+If running in master mode, pitch can also be changed manually. It changes sample rate and tune at the same time, during recording and playback. This may be useful to align with other sources and for creative effects. It allows to tune / de-tune the entire DAW, e.g. to match instruments which cannot be tuned. The slider can be moved using the mouse, or the arrow up/down or page up/down keyboard keys allow changing the pitch to common values. Use the keyboard keys to precisely reset to 0.
+
+**Input Level**
+
+Sets the analog input sound level (dBu units) corresponding to full scale digital level. In broadcasting, +4 dBU is a standard setting. The other settings allow to additional head-room while recording.
+
+**Output Level**
+
+Sets the analog output sound level (dBu units) corresponding to full scale digital level. In broadcasting, +4 dBU on XLR is a standard setting. Other settings allow to output higher or lower analog sound levels. The actual levels depend on the **Analog Out** setting.
+
+**Analog Out**
+
+Switches output levels depending on whether outputting balanced audio, over XLR, or unbalanced output, over RCA. This setting shall be set according to what analog audio break-out cable (XLR or RCA) is mounted on the sound card.
+
+**Phones**
+
+Sets to head-phone output level. "Lo-Power" offers reduced background noise on highly sensitive headphones.
+
+**S/PDIF In**
+
+Selects the hardware S/PDIF input:
+- "Optical": take S/PDIF from the TOSLINK input connector (otherwise used for ADAT input).
+- "Coaxial": take S/PDIF from the white RCA connector on the digital audio break-out cable.
+- "Internal": take S/PDIF from the internal S/PDIF input jumper on the sound card, useful to connect the sound card to an internal CD player, for instance.
+
+**S/PDIF Out**
+
+- "Optical": output S/PDIF on the TOSLINK output connector (otherwise used for ADAT output).
+- "Professional": select professional S/PDIF output. If not selected, "Consumer" S/PDIF output is generated.
+
+**Word Clk Out**
+
+- "Single Speed": if selected, single-speed word clock output is generated even if the card is running at double or quadruple sample rates. If not selected, word clock output will follow the speed mode of the card.
+
+The TCO module only supports single speed word clock output. When the TCO module is present, this setting is always enabled and cannot be changed.
+
+**TMS**
+
+Activates the transmission of Channel Status data and Track Marker information from the S/PDIF and AES input, in the least significant bits of audio samples. On other platforms, such data and information is analyzed by RME's DIGICheck application.
+
 
