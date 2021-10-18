@@ -31,6 +31,7 @@ on the command line, or make a desktop launcher for it and double click that. Th
 - If you have a supported RME HDSPe card on your system, and the [snd-hdspe](https://github.com/PhilippeBekaert/snd-hdspe) driver is running, a panel comes up with configuration options and settings for your card(s). If either condition is not fulfilled, hdspeconf will
 tell you as well.
 
+When multiple cards, or TCO module, are present on the system, the drop-down chooser on top of the panel allows to choose the card to configure.
 Configuration panel documentation:
 
 - [AIO Pro configuration panel](doc/AIOPro.md)
