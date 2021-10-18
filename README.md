@@ -34,7 +34,8 @@ tell you as well.
 When multiple cards, or TCO module, are present on the system, the drop-down chooser on top of the panel allows to choose the card to configure.
 Configuration panel documentation:
 
-- [AIO Pro configuration panel](doc/AIOPro.md)
+- [AIO Pro configuration](doc/AIOPro.md)
+- [TCO configuration](doc/TCO.md)
 
 **Status**
 
