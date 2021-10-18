@@ -14,7 +14,7 @@ This will build the hdspeconf executable in your repository clone folder.
 
 **Installation**
 
-- Copy hdspeconf and dialog-warning.png to a folder of your choice, e.g. /usr/local/bin.
+- Copy hdspeconf and dialog-warning.png to a folder of your choice, e.g. ~/bin. Add that folder to your $PATH.
 
 **Usage**
 
