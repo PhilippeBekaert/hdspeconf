@@ -42,7 +42,7 @@ While being live, it is safe to switch preferred clock source to a source with "
 
 The panel also indicates the detected sample rate on external sources with valid signal ("Lock" or "Sync" status), and warns about sources with sample rate not compatible with the current source by displaying a warning sign.
 
-The internal sample rate is set by linux ALSA during PCM initialization. It cannot be set using hdspeconf is some audio application is using the card. hdspeconf only allows changing the sample rate if no application is running. The setting may be overridden by ALSA tools after, though.
+The internal sample rate is set by linux ALSA during PCM initialization. It cannot be set using hdspeconf if some audio application is using the card. hdspeconf only allows changing the sample rate if no application is running. The setting will be overridden by ALSA tools after, though.
 
 **Pitch**
 
