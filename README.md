@@ -3,7 +3,7 @@ User space configuration tool for [RME](http://www.rme-audio.com/) HDSPe MADI / 
 
 **Building hdspeconf**
 
-- Prerequisites: hdspeconf builds upon ALSA lib and wxwidgets. On ubuntu, 
+- Prerequisites: hdspeconf builds upon ALSA lib and [wxWidgets](https://www.wxwidgets.org). On ubuntu, 
 
      apt-get install libasound2-dev wx3.0-headers libwxgtk3.0-dev
 
