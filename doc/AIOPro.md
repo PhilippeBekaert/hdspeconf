@@ -46,9 +46,9 @@ The internal sample rate is set by linux ALSA during PCM initialization. It cann
 
 **Pitch**
 
-Displays the current source sample rate pitch relative to the nearest standard sample rate, in parts per million. 
+Displays the current source sample rate deviation from the nearest standard sample rate, in parts per million. 
 
-If running in master mode, pitch can also be changed manually. It changes sample rate and tune at the same time, during recording and playback. This may be useful to align with other sources and for creative effects. It allows to tune / de-tune the entire DAW, e.g. to match instruments which cannot be tuned. The slider can be moved using the mouse, or the arrow up/down or page up/down keyboard keys allow changing the pitch to common values. Use the keyboard keys to precisely reset to 0.
+Pitch can be set when running in master mode: It changes sample rate and tune at the same time, during recording and playback. This may be useful to align with other sources and for creative effects. It allows to tune / de-tune the entire DAW, e.g. to match instruments which cannot be tuned. The slider can be moved using the mouse, or the arrow up/down or page up/down keyboard keys allow changing the pitch to common values. Use the keyboard keys to precisely reset to 0.
 
 **Input Level**
 
