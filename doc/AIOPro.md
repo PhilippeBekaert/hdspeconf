@@ -88,4 +88,4 @@ The optional TCO module only supports single speed word clock output. When the T
 
 Activates the transmission of Channel Status data and Track Marker information from the S/PDIF and AES input, in the least significant bits of audio samples. On other platforms, such data and information is analyzed by RME's DIGICheck application.
 
-
+See [RME's HDSPe AIO Pro user guide](https://www.rme-audio.de/downloads/hdspeaiopro_e.pdf) for more information.
