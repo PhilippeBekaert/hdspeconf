@@ -24,6 +24,8 @@ This will build the hdspeconf executable in your repository clone folder.
      
 on the command line, or make a desktop launcher for it and double click that. There are no command line arguments (yet, at this time).
 
+- If you have a supported RME HDSPe card on your system, and the (https://github.com/PhilippeBekaert/snd-hdspe) driver is running, a panel comes up with configuration options and settings for your card.
+
 **Status**
 
 - RME HDSPe AIO Pro cards, TCO, Word Clock module and audio I/O extension boards are fully supported.
