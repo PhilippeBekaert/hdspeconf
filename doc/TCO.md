@@ -32,7 +32,7 @@ Sets the LTC engine sample rate: 44.1 or 48 KHz are supported. Selecting "From A
 
 **Pull Up/Down**
 
-Sets the TCO engine pull up/down factor, in order to match NTSC or PAL input (+0.1% or -0.1%) or for 24/25 fps frame rate conversions. This setting shall match the effective pull factor of incoming LTC, and is set as such by the **Auto button** in the System Sample Rate box. This setting does not affect LTC output. This setting also affects the sound card synchronisation sample rate when synchronising with word clock input in "1:1" sample rate conversion mode.
+Sets the TCO engine pull up/down factor, in order to match NTSC or PAL input (+0.1% or -0.1%) or for 24/25 fps frame rate conversions. This setting shall match the effective pull factor of incoming LTC, and is set as such by the **Auto button** in the System Sample Rate box. This setting also affects the sound card synchronisation sample rate when synchronising with word clock input in "1:1" sample rate conversion mode. It does not affect LTC output.
 
 **WordClk Conversion**
 
