@@ -13,7 +13,7 @@ The radio buttons select synchronisation source:
 
 Alongside, input status for each of the synchronisation sources is displayed:
 - LTC: current LTC (last processed code incremented by 1 frame), LTC frame rate and format (drop frame or non-drop frame), and deviation of the LTC frame rate from the rate class (24, 25 or 30 fps) as measured by the driver. The deviation, or effective "pull factor" is displayed in percentage units. It is not displayed if zero.
-- Video: video format detected by the hardware.
+- Video: video format detected by the hardware: "PAL", "NTSC" or "No Video".
 - WordClk: lock status and speed: "No Lock", "Single Speed", "Double Speed", "Quad Speed".
 
 - "75 Ohm Term.": selecting this checkbox terminates the world clock BNC adapter with a 75 Ohms resistance. The yellow LED on the bracket lights up when termination is active.
