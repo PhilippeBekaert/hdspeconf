@@ -46,7 +46,7 @@ The internal sample rate is set by linux ALSA during PCM initialization. hdspeco
 
 **Pitch**
 
-Displays the current source sample rate deviation from the nearest standard sample rate, in parts per million (PPM). 
+Displays the current sound card sample rate deviation from the nearest standard sample rate, in parts per million (PPM). 
 
 Pitch can be set when running in master mode: It changes sample rate and tune at the same time, during recording and playback. This may be useful to align with other sources and for creative effects. It allows to tune / de-tune the entire DAW, e.g. to match instruments which cannot be tuned. The slider can be moved using the mouse. Arrow up/down or page up/down keyboard keys allow changing the pitch to common values, including resetting precisely to zero.
 
