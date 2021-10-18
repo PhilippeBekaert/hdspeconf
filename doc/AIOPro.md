@@ -64,11 +64,11 @@ Switches output levels depending on whether outputting balanced audio, over XLR,
 
 **Phones**
 
-Sets to head-phone output level. "Lo-Power" offers reduced background noise on highly sensitive headphones.
+Sets the head-phone output level. "Lo-Power" offers reduced background noise on highly sensitive headphones.
 
 **S/PDIF In**
 
-Selects the hardware S/PDIF input:
+Selects the S/PDIF input connector to use:
 - "Optical": take S/PDIF from the TOSLINK input connector (otherwise used for ADAT input).
 - "Coaxial": take S/PDIF from the white RCA connector on the digital audio break-out cable.
 - "Internal": take S/PDIF from the internal S/PDIF input jumper on the sound card, useful to connect the sound card to an internal CD player, for instance.
