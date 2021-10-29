@@ -11,6 +11,7 @@
 
 #include "HDSPeConf.h"
 
+#ifdef DEBUG
 static std::ostream& LtcPrint(std::ostream& s, const std::vector<long long>& ltc, bool df)
 {
   static uint64_t prevFrameCount {0};
@@ -26,6 +27,7 @@ static std::ostream& LtcPrint(std::ostream& s, const std::vector<long long>& ltc
   prevFrameCount = frameCount;
   return s << buf;
 }
+#endif /*DEBUG*/
 
 //////////////////////////////////////////////////////////////////////////////
 
@@ -101,7 +103,9 @@ void MyTCOPanel::setLtcInFrameRate(void)
 void MyTCOPanel::update_ltcIn(void)
 {
   setLtcIn();
-  //  LtcPrint(std::cerr, tco->ltcIn, false) << "\n";
+#ifdef DEBUG  
+  LtcPrint(std::cerr, tco->ltcIn, false) << "\n";
+#endif /*DEBUG*/
 }
 
 void MyTCOPanel::update_ltcInValid(void)
@@ -208,12 +212,10 @@ void MyTCOPanel::update_systemSampleRate(void)
 
 void MyTCOPanel::update_ltcOut(void)
 {
-  std::cerr << __func__ << "\n";
 }
 
 void MyTCOPanel::update_ltcRun(void)
 {
-  std::cerr << __func__ << "\n";
   ltcRunButton->SetValue(tco->ltcRun);
 }
 
@@ -382,7 +384,7 @@ void MyTCOPanel::jamSyncCB(wxCommandEvent &event)
     return;
   }
 
-  std::vector<long long> ltc = tco->ltcIn;
+  const std::vector<long long> ltc = tco->ltcIn;
   tco->ltcOut.set(ltc);
 }
 
