@@ -207,20 +207,18 @@ public:
   SndEnumControl ltcInFps;
   SndBoolControl ltcInDropFrame;
   SndIntControl  ltcInPullFac;
+  SndInt64Control ltcOut;
+  SndBoolControl ltcRun;
+  SndEnumControl sampleRate;
+  SndEnumControl frameRate;
   SndEnumControl videoFormat;
   SndBoolControl wckValid;
   SndEnumControl wckSpeed;
   SndBoolControl lock;
-
-  SndEnumControl sampleRate;
   SndEnumControl pull;
   SndEnumControl wckConversion;
-  SndEnumControl frameRate;
   SndEnumControl syncSrc;
   SndBoolControl wordTerm;
-
-  SndInt64Control ltcOut;
-  SndBoolControl ltcRun;
   
   //! \brief Constructor: loads properties for the TCO module on the card.
   HDSPeTCO(HDSPeCard* card);

@@ -134,7 +134,7 @@ void MyTCOPanel::update_videoFormat(void)
 
 void MyTCOPanel::setWckStatus(void)
 {
-  wckStatusLabel->SetLabel(tco->wckValid ? std::string("No Lock") : tco->wckSpeed.label());
+  wckStatusLabel->SetLabel(!tco->wckValid ? std::string("No Lock") : tco->wckSpeed.label());
 }
 
 void MyTCOPanel::update_wckValid(void)
