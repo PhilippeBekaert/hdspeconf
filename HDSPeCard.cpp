@@ -334,9 +334,9 @@ HDSPeTCO::HDSPeTCO(HDSPeCard* _card)
   , wckSpeed      (_card, "TCO WordClk Speed")
   , lock          (_card, "TCO Lock")
   , pull          (_card, "TCO Pull")
-  , wckConversion (_card, "TCO WCK Conversion")
+  , wckConversion (_card, "TCO WordClk Conversion")
   , syncSrc       (_card, "TCO Sync Source")
-  , wordTerm      (_card, "TCO Word Term")
+  , wordTerm      (_card, "TCO WordClk Term")
 {
 }
 
