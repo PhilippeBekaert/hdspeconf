@@ -1,28 +1,28 @@
-/*! \file AioPro.cpp
- *! \brief RME HDSPe Aio Pro panel and control.
- * 20210811,12,0908,09,10,11,16 - Philippe.Bekaert@uhasselt.be */
+/*! \file Aio.cpp
+ *! \brief RME HDSPe Aio panel and control.
+ * 20211117 - Philippe.Bekaert@uhasselt.be */
 
 #include <thread>
 #include <iostream>
 
 #include "SndControl.h"
-#include "AioPro.h"
-#include "AioProPanel.h"
+#include "Aio.h"
+#include "AioPanel.h"
 
 #include "HDSPeConf.h"
 
 #define SET_CB(prop) card->prop.callOnValueChange(POSTCB(update_##prop,#prop))
 
-class MyAioProPanel: public AioProPanel {
+class MyAioPanel: public AioPanel {
  protected:
-  class AioProCard* card { nullptr };
+  class AioCard* card { nullptr };
 
   constexpr static const double UNSET_PITCH { -1.0 };
   double newPitch = UNSET_PITCH;
   
  public:
-  MyAioProPanel(AioProCard* _card, wxWindow* parent)
-    : AioProPanel(parent, wxID_ANY)
+  MyAioPanel(AioCard* _card, wxWindow* parent)
+    : AioPanel(parent, wxID_ANY)
     , card(_card)
   {
     fwVersionLabel->SetLabelText(std::to_string(card->fwBuild));
@@ -45,6 +45,7 @@ class MyAioProPanel: public AioProPanel {
     SET_CB(spdifPro);
     SET_CB(singleSpeedWclkOut);
     SET_CB(clrTms);
+    SET_CB(xlr);
   }
 
   void update_running(void)
@@ -177,22 +178,23 @@ class MyAioProPanel: public AioProPanel {
   
   void update_inputLevel(void)
   {
-    // 3 - level because the buttons are declared bottom-to-top.
-    inputLevelBox->SetSelection(3 - card->inputLevel);
+    inputLevelBox->SetSelection(card->inputLevel);
   }
 
   void update_outputLevel(void)
   {
-    int level = card->getOutputLevel();
-    int xlr = card->outOnXlr();
-    setOutputLevelLabels(xlr);
-    outputLevelBox->SetSelection(3 - level);
-    analogOutBox->SetSelection(1 - xlr);
+    outputLevelBox->SetSelection(card->outputLevel);
+  }
+
+  void update_xlr(void)
+  {
+    // 1 - level because the buttons are declared bottom-to-top
+    analogOutBox->SetSelection(1 - card->xlr);
   }
 
   void update_phonesLevel(void)
   {
-    phonesLevelBox->SetSelection(1 - card->phonesLevel);
+    phonesLevelBox->SetSelection(card->phonesLevel);
   }
 
   void update_spdifIn(void)
@@ -224,27 +226,6 @@ class MyAioProPanel: public AioProPanel {
   void update_clrTms(void)
   {
     tmsButton->SetValue(!card->clrTms);
-  }
-
-  //! \brief Set output level radio box label texts depending on whether
-  //! we output on RCA or XLR.
-  void setOutputLevelLabels(bool xlr)
-  {
-    static const char* xlrTexts[4] = {
-      "+24 dBu",
-      "+19 dBu",
-      "+13 dBu",
-      "+4 dBu"
-    };
-    static const char* rcaTexts[4] = {
-      "+19 dBu",
-      "+13 dBu",
-      "+4 dBu",
-      "-2 dBu"
-    };
-    const char** texts = xlr ? xlrTexts : rcaTexts;
-    for (int i=0; i<4; i++)
-      outputLevelBox->SetString(i, texts[i]);
   }
 
   void internalFreqCB(wxCommandEvent &event) override
@@ -325,7 +306,7 @@ class MyAioProPanel: public AioProPanel {
   
   void inputLevelCB(wxCommandEvent &event) override
   {
-    card->inputLevel.set(3 - event.GetInt());
+    card->inputLevel.set(event.GetInt());
   }
   
   void spdifInCB(wxCommandEvent &event) override
@@ -335,8 +316,7 @@ class MyAioProPanel: public AioProPanel {
   
   void outputLevelCB(wxCommandEvent &event) override
   {
-    card->outputLevel.set((card->outOnXlr() ? 4 : 0)
-				  + (3 - event.GetInt()));
+    card->outputLevel.set(event.GetInt());
   }
   
   void spdifOpticalCB(wxCommandEvent &event) override
@@ -351,13 +331,12 @@ class MyAioProPanel: public AioProPanel {
   
   void analogOutCB(wxCommandEvent &event) override
   {
-    card->outputLevel.set(((1 - event.GetInt()) ? 4 : 0)
-				  + card->getOutputLevel());
+    card->xlr.set(1 - event.GetInt());
   }
   
   void phonesLevelCB(wxCommandEvent &event) override
   {
-    card->phonesLevel.set(1 - event.GetInt());
+    card->phonesLevel.set(event.GetInt());
   }
   
   void singleSpeedWclkOutCB(wxCommandEvent &event) override
@@ -371,7 +350,7 @@ class MyAioProPanel: public AioProPanel {
   }
 };
 
-AioProCard::AioProCard(int index)
+AioCard::AioCard(int index)
   : HDSPeCard(index)
   , inputLevel(this, "Input Level")
   , outputLevel(this, "Output Level")
@@ -381,26 +360,17 @@ AioProCard::AioProCard(int index)
   , spdifPro(this, "S/PDIF Out Professional")
   , singleSpeedWclkOut(this, "Single Speed WordClk Out")
   , clrTms(this, "Clear TMS")
+  , xlr(this, "XLR Breakout Cable")
 {
-  modelName = "AIO Pro";
+  modelName = "AIO";
   tcoSyncChoice = 4;
 }
 
-AioProCard::~AioProCard()
+AioCard::~AioCard()
 {
 }
 
-class wxPanel* AioProCard::makePanel(wxWindow* parent)
+class wxPanel* AioCard::makePanel(wxWindow* parent)
 {
-  return panel = new MyAioProPanel(this, parent);
-}
-
-int AioProCard::outOnXlr(void) const
-{
-  return outputLevel / 4;
-}
-
-int AioProCard::getOutputLevel(void) const
-{
-  return outputLevel % 4;
+  return panel = new MyAioPanel(this, parent);
 }

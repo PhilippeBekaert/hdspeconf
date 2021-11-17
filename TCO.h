@@ -50,7 +50,9 @@ class MyTCOPanel: public TCOPanel {
   void wallClockCB(wxCommandEvent &event) override;
   void jamSyncCB(wxCommandEvent &event) override;
 
+#ifdef NEVER  
   void setPullLabels(void);
+#endif /*NEVER*/
   void setFrameRateLabels(bool df);
   void setLtcIn(void);
   void setLtcInFrameRate(void);

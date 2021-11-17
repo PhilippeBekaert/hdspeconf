@@ -37,8 +37,10 @@ MyTCOPanel::MyTCOPanel(class HDSPeTCO* _tco, class wxWindow* parent)
   : TCOPanel(parent, wxID_ANY)
   , tco(_tco)
 {
+#ifdef NEVER  
   setPullLabels();
-
+#endif /*NEVER*/
+  
   // Need to add our own callback to the card panel callbacks for
   // sampleRate and preferredRef.
   update_cardPreferredRef = tco->card->preferredRef.callOnValueChange
@@ -231,6 +233,7 @@ void MyTCOPanel::setCardStatus(void)
 				       ? wxNullColour : wxColour(0xff, 0xc6, 0x00));
 }
 
+#ifdef NEVER
 // We need this function because wxGlade C++ code generation crashes when
 // there are % characters in the label texts. (Problem fixed in newer versions
 // of wxGlade).
@@ -246,6 +249,7 @@ void MyTCOPanel::setPullLabels(void)
     for (int i=0; i<5; i++)
       pullBox->SetString(i, texts[i]);    
 }
+#endif /*NEVER*/
 
 void MyTCOPanel::setFrameRateLabels(bool df)
 {

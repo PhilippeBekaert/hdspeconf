@@ -9,6 +9,7 @@
 
 #include "HDSPeCard.h"
 #include "AioPro.h"
+#include "Aio.h"
 #include "TCO.h"
 
 HDSPeCardEnumerator::HDSPeCardEnumerator()
@@ -22,6 +23,9 @@ HDSPeCardEnumerator::HDSPeCardEnumerator()
     try {
       if (strncmp(name, "RME AIO Pro", strlen("RME AIO Pro")) == 0) {
 	newcard = new AioProCard(i);
+      }
+      else if (strncmp(name, "RME AIO", strlen("RME AIO")) == 0) {
+	newcard = new AioCard(i);
       }
     } catch (std::runtime_error& e) {
       std::cerr << e.what() << "\n";
