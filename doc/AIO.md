@@ -1,6 +1,6 @@
-# AIO Pro configuration
+# AIO configuration
 
-![AIO Pro control panel](AioProTCO.png "AIO Pro control panel")
+![AIO control panel](AioPanel.png "AIO control panel")
 
 Top-to-bottom, left-to-right:
 
@@ -52,20 +52,36 @@ Pitch can be set when running in master mode: It changes sample rate and tune at
 
 **Input Level**
 
-Sets the analog input sound level (dBu units) corresponding to full scale digital level. In broadcasting, +13 dBu (4 dBu reference with 9 dB headroom)
-is a standard setting. The other settings allow for additional head-room while recording.
+Sets the analog input sound level:
+
+| Reference | 0 dbFS @ | Headroom |
+| --------- | -------- | -------- |
+| Lo Gain   | +19 dBu  | 15 dB    |
+| +4 dBu    | +13 dBu  | 9 dB     |
+| -10 dBV   | +2 dBV   | 12 dB    |
 
 **Output Level**
 
-Sets the analog output sound level (dBu units) corresponding to full scale digital level. In broadcasting, +13 dBu on XLR is a standard setting. Other settings allow to output higher or lower analog sound levels. The actual levels depend on the **Analog Out** setting.
+Sets the analog output sound level:
 
-**Analog Out**
-
-Switches output levels depending on whether outputting balanced audio, over XLR, or unbalanced output, over RCA. This setting shall match the analog audio break-out cable (XLR or RCA) mounted on the sound card.
+| Reference | 0 dbFS @ | Headroom |
+| --------- | -------- | -------- |
+| Hi Gain   | +19 dBu  | 15 dB    |
+| +4 dBu    | +13 dBu  | 9 dB     |
+| -10 dBV   | +2 dBV   | 12 dB    |
 
 **Phones**
 
-Sets the head-phone output level. "Lo-Power" offers reduced background noise on highly sensitive headphones.
+Sets the head-phone output level. Same options as **Output Level**.
+
+**Analog Out**
+
+This setting shall match the type of analog audio breakout cable you have
+connected to your card: RCA for the unbalanced breakout cable (with RCA
+audio connectors), or XLR for the balanced breakout cable (with XLR connectors).
+
+Checking XLR lowers the analog line output level by 6 dB, resulting in
+correct reference levels when using balanced XLR output.
 
 **S/PDIF In**
 
@@ -91,4 +107,4 @@ Activates the transmission of Channel Status data and Track Marker information f
 
 **More information**
 
-See [RME's HDSPe AIO Pro user guide](https://www.rme-audio.de/downloads/hdspeaiopro_e.pdf) for more information.
+See [RME's HDSPe AIO user guide](https://www.rme-audio.de/downloads/hdspeaio_e.pdf) for more information.
