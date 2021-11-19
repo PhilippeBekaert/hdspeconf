@@ -1,6 +1,6 @@
 /*! \file Aio.h
  *! \brief RME HDSPe Aio panel and control.
- * 20211117 - Philippe.Bekaert@uhasselt.be */
+ * 20211117,19 - Philippe.Bekaert@uhasselt.be */
 
 #ifndef _AIO_H_
 #define _AIO_H_
@@ -21,6 +21,9 @@ class AioCard: public HDSPeCard {
   SndBoolControl singleSpeedWclkOut;
   SndBoolControl clrTms;
   SndBoolControl xlr;
+  SndBoolControl ai4s;
+  SndBoolControl ao4s;
+  SndBoolControl adatInternal;
 
 public:
   AioCard(int index);
@@ -29,4 +32,4 @@ public:
   class wxPanel* makePanel(class wxWindow* parent) override;
 };
 
-#endif /* _AIO_PRO_H_ */
+#endif /* _AIO_H_ */

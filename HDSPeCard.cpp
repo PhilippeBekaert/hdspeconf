@@ -1,6 +1,6 @@
 /*! \file HDSPeCard.cpp
  *! \brief RME HDSPe sound card enumeration and common control.
- * 20210810,11,12,0902,06,08,09,10 - Philippe.Bekaert@uhasselt.be */
+ * 20210810,11,12,0902,06,08,09,10,1117 - Philippe.Bekaert@uhasselt.be */
 
 #include <math.h>
 #include <stdexcept>
@@ -298,18 +298,24 @@ static double pitchTab[5] = {
 
 static double getNextPitch(double pitch)
 {
+  double newpitch = pitchTab[4];
   for (int i=0; i<4; i++)
-    if (pitch < pitchTab[i] - 1e-5)
-      return pitchTab[i];
-  return pitchTab[4];
+    if (pitch < pitchTab[i] - 1e-5) {
+      newpitch = pitchTab[i];
+      break;
+    }
+  return newpitch;
 }
 
 static double getPrevPitch(double pitch)
 {
+  double newpitch = pitchTab[0];
   for (int i=4; i>0; i--)
-    if (pitch > pitchTab[i] + 1e-5)
-      return pitchTab[i];
-  return pitchTab[0];
+    if (pitch > pitchTab[i] + 1e-5) {
+      newpitch = pitchTab[i];
+      break;
+    }
+  return newpitch;
 }
 
 double HDSPeCard::nextPitch(void)
@@ -353,7 +359,7 @@ void HDSPeTCO::getFrameRate(int *fps, int *df)
   static int fpss[6] = { 0, 1, 2, 2, 3, 3 };
   static int dfs[6]  = { 0, 0, 0, 1, 0, 1 };
   if (frameRate > 6)
-    throw std::runtime_error("Impossible TCO frame rate value "
+    throw std::runtime_error("Unrecognized TCO frame rate value "
 			     + std::to_string(frameRate) + ".\n");
   *fps = fpss[frameRate];
   *df = dfs[frameRate];

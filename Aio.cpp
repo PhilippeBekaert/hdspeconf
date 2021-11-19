@@ -1,6 +1,6 @@
 /*! \file Aio.cpp
  *! \brief RME HDSPe Aio panel and control.
- * 20211117 - Philippe.Bekaert@uhasselt.be */
+ * 20211117,19 - Philippe.Bekaert@uhasselt.be */
 
 #include <thread>
 #include <iostream>
@@ -26,6 +26,9 @@ class MyAioPanel: public AioPanel {
     , card(_card)
   {
     fwVersionLabel->SetLabelText(std::to_string(card->fwBuild));
+    ao4sButton->SetValue(card->ao4s);
+    ai4sButton->SetValue(card->ai4s);
+    tcoButton->SetValue(card->tcoPresent);
     
     SET_CB(running);
     SET_CB(bufferSize);
@@ -46,6 +49,7 @@ class MyAioPanel: public AioPanel {
     SET_CB(singleSpeedWclkOut);
     SET_CB(clrTms);
     SET_CB(xlr);
+    SET_CB(adatInternal);
   }
 
   void update_running(void)
@@ -109,6 +113,11 @@ class MyAioPanel: public AioPanel {
     pitchSlider->SetValue(card->getPitch() * 1e6);  // display pitch in PPM
 
     checkFreqs();
+  }
+
+  void update_adatInternal(void)
+  {
+    adatInternalButton->SetValue(card->adatInternal);
   }
 
   void setClockSourceLabel(void)
@@ -348,6 +357,11 @@ class MyAioPanel: public AioPanel {
   {
     card->clrTms.set(!event.GetInt());
   }
+
+  void adatInternalCB(wxCommandEvent &event) override
+  {
+    card->adatInternal.set(event.GetInt());
+  }
 };
 
 AioCard::AioCard(int index)
@@ -361,6 +375,9 @@ AioCard::AioCard(int index)
   , singleSpeedWclkOut(this, "Single Speed WordClk Out")
   , clrTms(this, "Clear TMS")
   , xlr(this, "XLR Breakout Cable")
+  , ai4s(this, "AI4S Present")
+  , ao4s(this, "AO4S Present")
+  , adatInternal(this, "ADAT Internal")
 {
   modelName = "AIO";
   tcoSyncChoice = 4;
