@@ -7,7 +7,7 @@ User space configuration tool for [RME](http://www.rme-audio.com/) HDSPe MADI / 
 
      apt-get install libasound2-dev wx3.0-headers libwxgtk3.0-dev
 
-The GUI panels were designed with [wxGlade](http://wxglade.sourceforge.net). You do not need wxGlade as long as you do not need or want to update the panel designs. If you do, make sure to use wxGlade version 1.0.0 or later. Older versions of wxGlade (such as the stock version on Ubuntu 20.04) will not work.
+The GUI panels were designed with [wxGlade](http://wxglade.sourceforge.net). You do not need wxGlade as long as you do not need or want to update the panel designs. If you do, make sure to use wxGlade version 1.0.3 or later. Older versions of wxGlade (such as the stock version on Ubuntu 20.04) will not work.
 
 - Clone the hdspeconf repository to your local disk. cd to the clone folder. Type
 
@@ -36,13 +36,14 @@ When multiple cards, or TCO module, are present on the system, the drop-down cho
 **Card configuration and screen shots**
 
 - [AIO Pro configuration](doc/AIOPro.md)
+- [AIO configuration](doc/AIO.md)
 - [TCO configuration](doc/TCO.md)
 
 **Status**
 
 - At this time, hdspeconf is still early work in progress.
-- RME HDSPe AIO Pro cards, TCO, Word Clock module and audio I/O extension boards are fully supported.
-- RME HDSPe AIO, MADI, AES and RayDAT configuration panels TODO.
+- RME HDSPe AIO and AIO Pro cards, TCO, Word Clock module and audio I/O extension boards are fully supported.
+- RME HDSPe MADI, AES and RayDAT configuration panels TODO.
 - Developed and tested only on Ubuntu Studio 20.04 so far.
 
 **Acknowledgements**
@@ -57,6 +58,6 @@ See [LICENSE](https://github.com/PhilippeBekaert/hdspeconf/blob/main/LICENSE).
 
 **Author**
 
-[Philippe Bekaert](mailto:linux@panokkel.be), October 2021.
+[Philippe Bekaert](mailto:linux@panokkel.be), November 2021.
       
       
