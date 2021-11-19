@@ -107,8 +107,9 @@ Activates the transmission of Channel Status data and Track Marker information f
 
 **Expansion boards**
 
-This section reports detection of an AI4S, AO4S or TCO expansion board. These boards are detected by the hardware and there is no software control 
-over that. 
+This section reports detection of an [AI4S-192, AO4S-192](https://www.rme-audio.de/expansion-boards.html)
+or [TCO](https://www.rme-audio.de/time-code-option.html) 
+expansion board. These boards are detected by the hardware and there is no software control over that. 
 
 Select AEB/TEB if you have a AEB or TEB expansion board connected to the sound card, via the internal ADAT connector. Selecting this button sources
 ADAT from the internal connector instead of the optical connector. (The AEB and TEB boards are no longer manufactured by RME.)
