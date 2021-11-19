@@ -111,7 +111,7 @@ This section reports detection of an AI4S, AO4S or TCO expansion board. These bo
 over that. 
 
 Select AEB/TEB if you have a AEB or TEB expansion board connected to the sound card, via the internal ADAT connector. Selecting this button sources
-ADAT from the internal connector instead of the optical connector.
+ADAT from the internal connector instead of the optical connector. (The AEB and TEB boards are no longer manufactured by RME.)
 
 **More information**
 
