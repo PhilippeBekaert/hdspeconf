@@ -105,6 +105,15 @@ The optional TCO module only supports single speed word clock output. When the T
 
 Activates the transmission of Channel Status data and Track Marker information from the S/PDIF and AES input, in the least significant bits of audio samples. On other platforms, such data and information is analyzed by RME's DIGICheck application.
 
+**Expansion boards**
+
+This section reports detection of an [AI4S-192, AO4S-192](https://www.rme-audio.de/expansion-boards.html)
+or [TCO](https://www.rme-audio.de/time-code-option.html) 
+expansion board. These boards are detected by the hardware and there is no software control over that. 
+
+Select AEB/TEB if you have a AEB or TEB expansion board connected to the sound card, via the internal ADAT connector. Selecting this button sources
+ADAT from the internal connector instead of the optical connector. (The AEB and TEB boards are no longer manufactured by RME.)
+
 **More information**
 
 See [RME's HDSPe AIO user guide](https://www.rme-audio.de/downloads/hdspeaio_e.pdf) for more information.
