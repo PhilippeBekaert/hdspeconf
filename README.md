@@ -37,6 +37,7 @@ When multiple cards, or TCO module, are present on the system, the drop-down cho
 
 - [AIO Pro configuration](doc/AIOPro.md)
 - [AIO configuration](doc/AIO.md)
+- [RayDAT configuration](doc/RayDAT.md)
 - [TCO configuration](doc/TCO.md)
 
 **Status**
