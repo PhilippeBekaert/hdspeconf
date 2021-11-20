@@ -23,7 +23,7 @@ NoCardsPanel::NoCardsPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, 
   wxBoxSizer* sizer_1 = new wxBoxSizer(wxVERTICAL);
   wxBoxSizer* sizer_2 = new wxBoxSizer(wxHORIZONTAL);
   sizer_1->Add(sizer_2, 1, wxALIGN_CENTER_HORIZONTAL, 0);
-  wxStaticText* label_1 = new wxStaticText(this, wxID_ANY, wxT("No HDSPe cards detected."));
+  wxStaticText* label_1 = new wxStaticText(this, wxID_ANY, wxT("No supported cards detected."));
   sizer_2->Add(label_1, 0, wxALIGN_CENTER_VERTICAL, 0);
   
   SetSizer(sizer_1);
