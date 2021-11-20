@@ -62,7 +62,7 @@ Selects the S/PDIF input connector to use:
 
 **S/PDIF Out**
 
-- "Optical": output S/PDIF on the ADAT4 TOSLINK output connector (otherwise used for ADAT4 output). If not selected, S/PDIF output is produced on the red RCA connector of the digital audio breakout cable.
+- "Optical": output S/PDIF on the ADAT4 TOSLINK output connector (otherwise used for ADAT4 output). (S/PDIF output is always produced on the red RCA connector of the digital audio breakout cable, regardless of this setting.)
 - "Professional": selects professional format S/PDIF output. If not selected, consumer format S/PDIF output is produced.
 
 **AEB / TEB**
@@ -76,7 +76,7 @@ Similarly, selecting ADAT2 causes ADAT2 to be sourced from the internal ADAT2
 connector instead of the ADAT2 optical connector. Select this if you have an
 AEB or TEB expansion board connected to that ADAT2 internal connector.
 
-*Note: RME is no longer manufacturing the AEB or TEB expansion boards*
+*Note: RME is no longer manufacturing the AEB or TEB expansion boards.*
 
 **Word Clk Out**
 
