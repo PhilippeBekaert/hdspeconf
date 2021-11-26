@@ -35,8 +35,9 @@ When multiple cards, or TCO module, are present on the system, the drop-down cho
 
 **Card configuration and screen shots**
 
-- [AIO Pro configuration](doc/AIOPro.md)
+- [AES configuration](doc/AES.md)
 - [AIO configuration](doc/AIO.md)
+- [AIO Pro configuration](doc/AIOPro.md)
 - [RayDAT configuration](doc/RayDAT.md)
 - [TCO configuration](doc/TCO.md)
 
