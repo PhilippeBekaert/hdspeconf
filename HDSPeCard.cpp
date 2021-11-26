@@ -1,6 +1,6 @@
 /*! \file HDSPeCard.cpp
  *! \brief RME HDSPe sound card enumeration and common control.
- * 20210810,11,12,0902,06,08,09,10,1117,20 - Philippe.Bekaert@uhasselt.be */
+ * 20210810,11,12,0902,06,08,09,10,1117,20,25 - Philippe.Bekaert@uhasselt.be */
 
 #include <math.h>
 #include <stdexcept>
@@ -8,8 +8,9 @@
 #include <string>
 
 #include "HDSPeCard.h"
-#include "AioPro.h"
+#include "AES.h"
 #include "Aio.h"
+#include "AioPro.h"
 #include "RayDAT.h"
 #include "TCO.h"
 
@@ -30,6 +31,9 @@ HDSPeCardEnumerator::HDSPeCardEnumerator()
       }
       else if (strncmp(name, "RME RayDAT", strlen("RME RayDAT")) == 0) {
 	newcard = new RayDATCard(i);
+      }
+      else if (strncmp(name, "RME AES", strlen("RME AES")) == 0) {
+	newcard = new AESCard(i);
       }
     } catch (std::runtime_error& e) {
       std::cerr << e.what() << "\n";
@@ -101,7 +105,6 @@ HDSPeCard::HDSPeCard(int index)
   , bufferSize   (this, "Buffer Size")
   , tcoPresent   (this, "TCO Present")  
   , clockMode    (this, "Clock Mode")
-  , externalFreq (this, "External Frequency")
   , internalFreq (this, "Internal Frequency")
   , preferredRef (this, "Preferred AutoSync Reference")
   , syncRef      (this, "Current AutoSync Reference")
@@ -234,9 +237,15 @@ bool HDSPeCard::isMaster(void) const
   return clockMode != 0;
 }
 
+int HDSPeCard::getExternalFreq(void) const
+{
+  std::cerr << __func__ << ": syncRef=" << syncRef << ", syncFreq[" << syncRef << "]=" << syncFreq[syncRef] << "\n";
+  return syncFreq[syncRef];
+}
+
 int HDSPeCard::getReferenceSampleRate(void) const
 {
-  return freqRate(isMaster() ? internalFreq+1 : externalFreq);
+  return freqRate(isMaster() ? internalFreq+1 : getExternalFreq());
 }
 
 double HDSPeCard::getSystemSampleRate(void) const

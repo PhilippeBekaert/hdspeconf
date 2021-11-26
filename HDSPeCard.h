@@ -95,6 +95,10 @@ class HDSPeCard: public SndCard {
   //! source to sync with. Otherwise, it is the sample rate corresponding
   //! to the frequency class of the current external sync source.
   int getReferenceSampleRate(void) const;
+
+  //! \brief Get the external frequency class, that is: the frequency class
+  //! of the current autosync source.
+  int getExternalFreq(void) const;
   
   //! \brief Check whether a clock with frequency class <freq> is compatible
   //! with the reference sample rate. They are compatible if
@@ -184,7 +188,6 @@ public:
 
   // Common HDSPe card status and controls
   SndEnumControl clockMode;
-  SndEnumControl externalFreq;
   SndEnumControl internalFreq;
   SndEnumControl preferredRef;
   SndEnumControl syncRef;
