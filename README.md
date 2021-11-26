@@ -44,7 +44,7 @@ When multiple cards, or TCO module, are present on the system, the drop-down cho
 **Status**
 
 - At this time, hdspeconf is still work in progress.
-- RME HDSPe AES, AIO, AIO Pro and RayDAT cards, TCO, Word Clock module and audio I/O extension boards are done.
+- RME HDSPe AES, AIO, AIO Pro and RayDAT cards, TCO, Word Clock module, AI4S, AO4S are done.
 - RME HDSPe MADI configuration TODO.
 - Developed and tested on Ubuntu Studio 20.04 only so far.
 
