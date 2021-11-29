@@ -239,7 +239,6 @@ bool HDSPeCard::isMaster(void) const
 
 int HDSPeCard::getExternalFreq(void) const
 {
-  std::cerr << __func__ << ": syncRef=" << syncRef << ", syncFreq[" << syncRef << "]=" << syncFreq[syncRef] << "\n";
   return syncFreq[syncRef];
 }
 
@@ -270,6 +269,8 @@ bool HDSPeCard::isClockCompatible(unsigned freq) const
 
 double HDSPeCard::getPitch(double rate, double ref)
 {
+  rate = singleSpeedRate(rate);
+  ref = singleSpeedRate(ref);
   return (rate - ref) / ref;
 }
 
