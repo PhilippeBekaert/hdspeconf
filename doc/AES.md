@@ -57,13 +57,24 @@ Pitch can be set when running in master mode: It changes sample rate and tune at
 
 **Professional**
 
+Output higher voltage (5V) level and channel status in professional format. If deselected, the output signal will have a channel status compatible to S/PDIF and output voltage level is reduced to 2V. This option shall always be selected when feeding data to a device with AES/EBU inputs (with XLR connectors).
+
 **Emphasis**
+
+Output AES with emphasis information.
 
 **Non Audio**
 
+Output non-audio (dolby) status channel info.
+
 **Double Speed**
 
+Specify double speed mode: single wire (96K Frame), double wire (48K Frame, or S/MUX). The number of AES outputs is reduced to 8 in double wire mode.
+
 **Quad Speed**
+
+Specify quad speed mode: single wire (192K Frame), double wire (S/MUX, 96K Frame) or quad wire (S/MUX4, 48K Frame). The number of outputs is reduced to
+8 in double wire mode, and 4 in quad wire mode.
 
 **Word Clk Out**
 
