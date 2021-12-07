@@ -1,6 +1,7 @@
 /*! \file HDSPeCard.cpp
  *! \brief RME HDSPe sound card enumeration and common control.
- * 20210810,11,12,0902,06,08,09,10,1117,20,25 - Philippe.Bekaert@uhasselt.be */
+ * 20210810,11,12,0902,06,08,09,10,1117,20,25,1207 
+ * - Philippe.Bekaert@uhasselt.be */
 
 #include <math.h>
 #include <stdexcept>
@@ -13,6 +14,7 @@
 #include "AioPro.h"
 #include "RayDAT.h"
 #include "TCO.h"
+#include "MADI.h"
 
 HDSPeCardEnumerator::HDSPeCardEnumerator()
 {
@@ -34,6 +36,9 @@ HDSPeCardEnumerator::HDSPeCardEnumerator()
       }
       else if (strncmp(name, "RME AES", strlen("RME AES")) == 0) {
 	newcard = new AESCard(i);
+      }
+      else if (strncmp(name, "RME MADI", strlen("RME MADI")) == 0) {
+	newcard = new MADICard(i);
       }
     } catch (std::runtime_error& e) {
       std::cerr << e.what() << "\n";

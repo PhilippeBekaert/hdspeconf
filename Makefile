@@ -1,7 +1,7 @@
 SOURCES=hdspeconf.cpp SndCard.cpp SndControl.cpp \
-	HDSPeCard.cpp TCO.cpp Aio.cpp AioPro.cpp RayDAT.cpp AES.cpp \
+	HDSPeCard.cpp TCO.cpp Aio.cpp AioPro.cpp RayDAT.cpp AES.cpp MADI.cpp \
 	NoCardsPanel.cpp TCOPanel.cpp AioPanel.cpp AioProPanel.cpp \
-	RayDATPanel.cpp AESPanel.cpp
+	RayDATPanel.cpp AESPanel.cpp MADIPanel.cpp
 OBJECTS=${SOURCES:.cpp=.o} 
 CXXFLAGS=-Wall -g -O2 -I.. `wx-config --cxxflags`
 LDFLAGS=-lasound `wx-config --libs`
