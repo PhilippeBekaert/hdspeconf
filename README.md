@@ -38,14 +38,14 @@ When multiple cards, or TCO module, are present on the system, the drop-down cho
 - [AES configuration](doc/AES.md)
 - [AIO configuration](doc/AIO.md)
 - [AIO Pro configuration](doc/AIOPro.md)
+- [MADI configuration](doc/MADI.md)
 - [RayDAT configuration](doc/RayDAT.md)
 - [TCO configuration](doc/TCO.md)
 
 **Status**
 
-- At this time, hdspeconf is still work in progress.
-- RME HDSPe AES, AIO, AIO Pro and RayDAT cards, TCO, Word Clock module are ready for beta testing.
-- RME HDSPe MADI configuration TODO.
+At this time (December 2021), hdspeconf is still work in progress.
+- RME HDSPe AES, AIO, AIO Pro, MADI and RayDAT cards, TCO, Word Clock module are ready for beta testing.
 - Developed and tested on Ubuntu Studio 20.04 only so far.
 
 **Acknowledgements**
@@ -60,6 +60,6 @@ See [LICENSE](https://github.com/PhilippeBekaert/hdspeconf/blob/main/LICENSE).
 
 **Author**
 
-[Philippe Bekaert](mailto:linux@panokkel.be), November 2021.
+[Philippe Bekaert](mailto:linux@panokkel.be), December 2021.
       
       
