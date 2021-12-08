@@ -1,6 +1,6 @@
 /*! \file MADI.h
  *! \brief RME HDSPe MADI panel and control.
- * 20211207 - Philippe.Bekaert@uhasselt.be */
+ * 20211207,08 - Philippe.Bekaert@uhasselt.be */
 
 #ifndef _MADI_H_
 #define _MADI_H_
@@ -27,6 +27,8 @@ class MADICard: public HDSPeCard {
   ~MADICard();
 
   class wxPanel* makePanel(class wxWindow* parent) override;
+
+  int getExternalFreq(void) const override;
 };
 
 #endif /* _MADI_H_ */

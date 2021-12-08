@@ -97,8 +97,8 @@ class HDSPeCard: public SndCard {
   int getReferenceSampleRate(void) const;
 
   //! \brief Get the external frequency class, that is: the frequency class
-  //! of the current autosync source.
-  int getExternalFreq(void) const;
+  //! of the current autosync source. MADI cards have their own implementation.
+  virtual int getExternalFreq(void) const;
   
   //! \brief Check whether a clock with frequency class <freq> is compatible
   //! with the reference sample rate. They are compatible if

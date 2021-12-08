@@ -336,3 +336,8 @@ class wxPanel* MADICard::makePanel(wxWindow* parent)
 {
   return panel = new MyMADIPanel(this, parent);
 }
+
+int MADICard::getExternalFreq(void) const
+{
+  return externalFreq;
+}
