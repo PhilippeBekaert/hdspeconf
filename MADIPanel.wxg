@@ -103,7 +103,7 @@
                         <flag>wxALL|wxEXPAND</flag>
                         <object class="wxStaticBoxSizer" name="sizer_12" base="EditStaticBoxSizer">
                             <orient>wxVERTICAL</orient>
-                            <label>Prefered Clock Source</label>
+                            <label>Preferred Clock Source</label>
                             <object class="sizeritem">
                                 <option>1</option>
                                 <border>0</border>
