@@ -16,6 +16,10 @@ The GUI panels were designed with [wxGlade](http://wxglade.sourceforge.net). You
       
 This will build the hdspeconf executable in your repository clone folder.
 
+- hdspeconf is tested only against the latest version of the [snd-hdspe](https://github.com/PhilippeBekaert/snd-hdspe) 
+driver. Make sure you have the latest [snd-hdspe](https://github.com/PhilippeBekaert/snd-hdspe) installed on your 
+system.
+
 **Installation**
 
 - Copy hdspeconf and dialog-warning.png to a folder of your choice, e.g. ~/bin. Add that folder to your $PATH.
