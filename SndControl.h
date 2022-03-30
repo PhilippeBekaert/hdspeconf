@@ -319,7 +319,6 @@ protected:
   //! user supplied onInfoChange() and/or onValueChange() depending on mask.
   virtual void onElemEvent(unsigned mask) =0;
 
-private:
   //! \brief ALSA hcontrol element callback.
   static int _elem_cb(snd_hctl_elem_t *elem, unsigned int mask);
   

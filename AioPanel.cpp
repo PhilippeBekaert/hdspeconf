@@ -42,7 +42,7 @@ AioPanel::AioPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wx
   sizer_3->Add(sizer_20, 0, wxALL|wxEXPAND, 4);
   fwVersionLabel = new wxStaticText(this, wxID_ANY, wxT("21"));
   sizer_20->Add(fwVersionLabel, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 4);
-  wxStaticBoxSizer* sizer_12 = new wxStaticBoxSizer(new wxStaticBox(this, wxID_ANY, wxT("Prefered Clock Source / Input Status")), wxVERTICAL);
+  wxStaticBoxSizer* sizer_12 = new wxStaticBoxSizer(new wxStaticBox(this, wxID_ANY, wxT("Preferred Clock Source / Input Status")), wxVERTICAL);
   sizer_2->Add(sizer_12, 0, wxALL|wxEXPAND, 4);
   wxFlexGridSizer* grid_sizer_2 = new wxFlexGridSizer(7, 5, 4, 4);
   sizer_12->Add(grid_sizer_2, 1, wxEXPAND, 0);
