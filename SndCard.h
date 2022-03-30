@@ -8,7 +8,7 @@
 /*! \page cardplusplus SndCard: ALSA sound card control handle C++ wrapper.
  *
  * Opening an ALSA sound card control interface with SndCard is a first step
- * before controls themselves can be accessed as explained in \ref controlplusplus.
+ * before controls themselves can be accessed, as explained in \ref controlplusplus.
  *
  * Construction
  * ------------

@@ -1,6 +1,6 @@
 /*! \file HDSPeCard.cpp
  *! \brief RME HDSPe sound card enumeration and common control.
- * 20210810,11,12,0902,06,08,09,10,1117,20,25,1207,08
+ * 20210810,11,12,0902,06,08,09,10,1117,20,25,1207,08,20220321,30
  * - Philippe.Bekaert@uhasselt.be */
 
 #include <math.h>
@@ -98,6 +98,7 @@ HDSPeCard::~HDSPeCard()
 
 void HDSPeCard::onStatusChange(void)
 {
+  //  std::cerr << __func__ << ":" << __LINE__ << ": statusPolling=" << statusPolling << ", statusPollFreq=" << statusPollFreq << "\n";
   if (statusPolling < statusPollFreq) {
     // Driver deactivates status polling after detecting a change.
     // Re-enable it. Or if other applications want to poll at a different
@@ -205,12 +206,13 @@ bool HDSPeCard::isMaster(void) const
 
 int HDSPeCard::getExternalFreq(void) const
 {
-  return syncFreq[syncRef];
+  return syncRef < syncFreq.getCount() ? syncFreq[syncRef] : 0;
 }
 
 int HDSPeCard::getReferenceSampleRate(void) const
 {
-  return freqRate(isMaster() ? internalFreq+1 : getExternalFreq());
+  return freqRate(isMaster() || syncRef >= syncFreq.getCount() /* "Intern" */
+		  ? internalFreq+1 : getExternalFreq());
 }
 
 double HDSPeCard::getSystemSampleRate(void) const
@@ -310,6 +312,7 @@ double HDSPeCard::prevPitch(void)
 
 HDSPeTCO::HDSPeTCO(HDSPeCard* _card)
   : card          (_card)
+  , firmware      (_card, "TCO Firmware")
   , ltcIn         (_card, "LTC In")
   , ltcInValid    (_card, "LTC In Valid")
   , ltcInFps      (_card, "LTC In Frame Rate")
@@ -320,8 +323,10 @@ HDSPeTCO::HDSPeTCO(HDSPeCard* _card)
   , sampleRate    (_card, "LTC Sample Rate")
   , frameRate     (_card, "LTC Frame Rate")
   , videoFormat   (_card, "TCO Video Format")
+  , videoFps      (_card, "TCO Video Frame Rate")
   , wckValid      (_card, "TCO WordClk Valid")
   , wckSpeed      (_card, "TCO WordClk Speed")
+  , wckOutSpeed   (_card, "TCO WordClk Out Speed")
   , lock          (_card, "TCO Lock")
   , pull          (_card, "TCO Pull")
   , wckConversion (_card, "TCO WordClk Conversion")

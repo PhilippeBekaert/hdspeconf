@@ -78,7 +78,7 @@ protected:
 //! \brief The application.
 class HDSPeConf: public wxApp {
 public:
-  bool OnInit()
+  bool OnInit() override
   {
     wxInitAllImageHandlers();
     
@@ -87,18 +87,44 @@ public:
       SetTopWindow(mainWindow);
 
       mainWindow->Show();
-    } catch (std::runtime_error &e) {
-      std::cerr << e.what() << "\n";
+    } catch (std::exception &e) {
+      std::cerr << "OnInit C++ exception caught: " << e.what() << "\n";
       return false;
+    } catch (...) {
+      std::cerr << "OnInit: unhandled exception caught.\n";
     }
     return true;
   }
 
-  int OnExit()
+  int OnExit() override
   {
     return 0;
   }
+  
+  bool OnExceptionInMainLoop() override
+  {
+    try {
+      throw;
+    } catch(std::exception &e) {
+      std::cerr << "MainLoop C++ exception caught: " << e.what() << "\n";
+      //        MessageBoxA(NULL, e.what(), "C++ Exception Caught", MB_OK);
+    } catch (...) {
+      std::cerr << "OnExceptionInMainLoop: unhandled exception caught.\n";
+    }
+    return true;   // continue on. Return false to abort program
+  }
 
+  void OnUnhandledException() override
+  {
+    try {
+      throw;
+    } catch(std::exception &e) {
+      std::cerr << "Unhandled C++ exception caught: " << e.what() << "\n";
+    } catch (...) {
+      std::cerr << "Unhandled exception caught.\n";
+    }
+  }
+  
   //! \brief Post callback function.
   void post(std::function<void(void)> cb)
   {

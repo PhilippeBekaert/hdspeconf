@@ -205,6 +205,7 @@ class HDSPeTCO {
 public:
   HDSPeCard *card { nullptr };   //!< HDSPe card to which this TCO is connected.
 
+  SndIntControl firmware;
   SndInt64Control ltcIn;
   SndBoolControl ltcInValid;
   SndEnumControl ltcInFps;
@@ -215,8 +216,10 @@ public:
   SndEnumControl sampleRate;
   SndEnumControl frameRate;
   SndEnumControl videoFormat;
+  SndEnumControl videoFps;
   SndBoolControl wckValid;
   SndEnumControl wckSpeed;
+  SndEnumControl wckOutSpeed;
   SndBoolControl lock;
   SndEnumControl pull;
   SndEnumControl wckConversion;

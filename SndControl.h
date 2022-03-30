@@ -437,7 +437,7 @@ public:
   snd_ctl_elem_type_t getType(void) const       { return type; }
 
   //! \brief Get the number of channels in this control.
-  int getCount(void) const                      { return count; }
+  unsigned getCount(void) const                      { return count; }
 
   //! \brief Test whether this control element is a user generated
   //! control element. Returns true if so, and false if it is a driver

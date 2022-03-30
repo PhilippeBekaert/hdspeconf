@@ -37,15 +37,17 @@ private:
   {
     try {
       while (!shutdown_requested) {
-      if (snd_hctl_wait(*card, 1000))
-	SndCheckErr(snd_hctl_handle_events(*card), "hctl_handle_events");
+	if (snd_hctl_wait(*card, 1000)) {
+	  //	  std::cerr << "SndCardEventThread: got events ...\n";
+	  SndCheckErr(snd_hctl_handle_events(*card), "hctl_handle_events");
+	}
     }
     } catch (std::runtime_error& e) {
       std::cerr << "SndCardEventThread: " << e.what() << "on card " << card->getName() << "\n";
     } catch (...) {
       std::cerr << "SndCardEventThread: unknown error.\n";
     }
-  }  
+  }
 };
 
 void SndCard::open(const std::string& name)

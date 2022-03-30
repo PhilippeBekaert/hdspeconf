@@ -118,11 +118,12 @@ SndControl::~SndControl()
 
 void SndControl::checkChannel(unsigned i) const
 {
-  if (i >= count)
+  if (i >= count) {
     throw std::runtime_error("SndControl '" + name + "' on card '"
 			     + getCardName() + "' channel index "
 			     + std::to_string(i) + " out of range ("
 			     + std::to_string(count) + " channels available).\n");
+  }
 }
 
 const std::string SndControl::getCardName(void) const

@@ -1,6 +1,6 @@
 /*! \file TCO.h
  *! \brief RME HDSP Time Code Option module status and control.
- * Philippe.Bekaert@uhasselt.be - 20210813,0911 */
+ * Philippe.Bekaert@uhasselt.be - 20210813,0911,20220330 */
 
 #ifndef _TCO_H_
 #define _TCO_H_
@@ -21,6 +21,7 @@ class MyTCOPanel: public TCOPanel {
   void update_ltcInDropFrame(void);
   void update_ltcInPullFac(void);
   void update_videoFormat(void);
+  void update_videoFps(void);
   void update_wckValid(void);
   void update_wckSpeed(void);
   void update_lock(void);

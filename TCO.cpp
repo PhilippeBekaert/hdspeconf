@@ -1,6 +1,6 @@
 /*! \file TCO.cpp
  *! \brief RME HDSP Time Code Option module status and control.
- * Philippe.Bekaert@uhasselt.be - 20210813,14,0902,07,11,16,28,29,1009 */
+ * Philippe.Bekaert@uhasselt.be - 20210813,14,0902,07,11,16,28,29,1009,20220321,30 */
 
 #include <stdio.h>
 #include <time.h>
@@ -56,6 +56,7 @@ MyTCOPanel::MyTCOPanel(class HDSPeTCO* _tco, class wxWindow* parent)
   SET_CB(ltcInDropFrame);
   SET_CB(ltcInPullFac);
   SET_CB(videoFormat);
+  SET_CB(videoFps);
   SET_CB(wckValid);
   SET_CB(wckSpeed);
   SET_CB(lock);
@@ -69,6 +70,10 @@ MyTCOPanel::MyTCOPanel(class HDSPeTCO* _tco, class wxWindow* parent)
 
   SET_CB(ltcOut);
   SET_CB(ltcRun);
+
+  ltcSyncButton->Enable(tco->firmware < 11);  // LTC sync is not reliable and no longer available when firmware version is 11 or later.
+  videoSyncButton->Enable(true); // always enable: video format is only detected when this button is selected.
+  wckSyncButton->Enable(true);   // always enable: word clock speed is only detected when this button is selected.
 }
 
 void MyTCOPanel::setLtcIn(void)
@@ -114,7 +119,6 @@ void MyTCOPanel::update_ltcInValid(void)
 {
   setLtcIn();
   setLtcInFrameRate();
-  ltcSyncButton->Enable(tco->ltcInValid);
 }
 
 void MyTCOPanel::update_ltcInFps(void)
@@ -134,19 +138,27 @@ void MyTCOPanel::update_ltcInPullFac(void)
 
 void MyTCOPanel::update_videoFormat(void)
 {
-  videoStatusLabel->SetLabel(tco->videoFormat.label());
-  videoSyncButton->Enable(tco->videoFormat != 0);
+  //  std::cerr << __func__ << ":" << __LINE__ << ": videoFormat=" << tco->videoFormat << "\n";
+  if (tco->firmware < 11)
+    videoStatusLabel->SetLabel(tco->videoFormat==0 ? std::string("") : tco->videoFormat.label());
+}
+
+void MyTCOPanel::update_videoFps(void)
+{
+  //  std::cerr << __func__ << ":" << __LINE__ << ": videoFps=" << tco->videoFps << "\n";
+  if (tco->firmware >= 11)
+    videoStatusLabel->SetLabel(tco->videoFps==0 ? std::string("No Video") :
+			       (std::string(tco->videoFps.label()) + " fps"));
 }
 
 void MyTCOPanel::setWckStatus(void)
 {
-  wckStatusLabel->SetLabel(!tco->wckValid ? std::string("No Lock") : tco->wckSpeed.label());
+  wckStatusLabel->SetLabel(!tco->wckValid ? std::string("") : tco->wckSpeed.label());
 }
 
 void MyTCOPanel::update_wckValid(void)
 {
   setWckStatus();
-  wckSyncButton->Enable(tco->wckValid);
 }
 
 void MyTCOPanel::update_wckSpeed(void)

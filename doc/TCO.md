@@ -7,13 +7,15 @@ Top-to-bottom, left-to-right:
 **Sync Source / Input Status**
 
 The radio buttons select synchronisation source:
-- "LTC": LTC input.
+- "LTC": LTC input. Synchronisation to LTC input is not reliable and disabled
+when TCO firmware version is 11 or higher.
 - "Video": TCO video input.
 - "WordClk" TCO word clock input.
 
 Alongside, input status for each of the synchronisation sources is displayed:
 - LTC: current LTC (last processed code incremented by 1 frame), LTC frame rate and format (drop frame or non-drop frame), and deviation of the LTC frame rate from the rate class (24, 25 or 30 fps) as measured by the driver. The deviation, or effective "pull factor" is displayed in percentage units. It is not displayed if zero.
-- Video: video format detected by the hardware: "PAL", "NTSC" or "No Video".
+- Video: video format detected by the hardware: "PAL", "NTSC" (if TCO firmware
+before version 11), or "No Video" or video frame rate (if TCO firmware is version 11 or later).
 - WordClk: incoming word clock signal status and speed: "No Lock", "Single Speed", "Double Speed", "Quad Speed".
 
 - "75 Ohm Term.": selecting this checkbox terminates the world clock BNC adapter with a 75 Ohms resistance. The yellow LED on the bracket lights up when termination is active.
