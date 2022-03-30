@@ -44,7 +44,7 @@ When multiple cards, or TCO module, are present on the system, the drop-down cho
 
 **Status**
 
-At this time (December 2021), hdspeconf is still work in progress.
+At this time (March 2022), hdspeconf is still work in progress.
 - RME HDSPe AES, AIO, AIO Pro, MADI and RayDAT cards, TCO, Word Clock module are ready for beta testing.
 - Developed and tested on Ubuntu Studio 20.04 only so far.
 
@@ -60,6 +60,6 @@ See [LICENSE](https://github.com/PhilippeBekaert/hdspeconf/blob/main/LICENSE).
 
 **Author**
 
-[Philippe Bekaert](mailto:linux@panokkel.be), December 2021.
+[Philippe Bekaert](mailto:linux@panokkel.be), March 2022.
       
       
